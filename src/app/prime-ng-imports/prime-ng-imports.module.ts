@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {CardModule} from 'primeng/card';
+import {DataViewModule} from 'primeng/dataview';
 
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  exports : [
+    CardModule,
+    DataViewModule
   ]
 })
 export class PrimeNgImportsModule { }

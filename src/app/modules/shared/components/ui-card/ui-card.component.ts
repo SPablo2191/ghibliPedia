@@ -9,6 +9,7 @@ export class UiCardComponent implements OnInit {
   @Input() header! : string;
   @Input() subheader! : string;
   @Input() description! : string;
+  @Input() icon! : string;
   constructor() { }
 
   ngOnInit(): void {

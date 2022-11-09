@@ -10,11 +10,11 @@
   </div>
   <ng-template pTemplate="footer">
     <div class="flex justify-content-center">
-      <button pButton pRipple type="button"  icon="pi pi-search" class="p-button-rounded p-button-info"></button>
+      <button pButton pTooltip="Ver detalle" tooltipPosition="top" pRipple type="button"  icon="pi pi-search" class="p-button-rounded p-button-info"></button>
     </div>
     <div class="border-top-1 border-gray-400 my-4">
       <div class="my-4">
-        <img src="/assets/images/totoro.svg" style="width: 3rem;" alt="totoro" class="filter">
+        <img src="{{icon}}" style="width: 3rem;"  class="filter">
       </div>
     </div>
   </ng-template>

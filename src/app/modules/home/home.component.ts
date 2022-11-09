@@ -3,7 +3,7 @@ import { Film } from 'src/app/models/Film';
 import { map } from 'rxjs';
 import { DataGhibliService } from 'src/app/services/data-ghibli.service';
 import { Store } from '@ngrx/store';
-import { loadedFilms, loadFilms } from 'src/app/state/actions/films.actions';
+import { loadedFilms } from 'src/app/state/actions/films.actions';
 
 @Component({
   selector: 'app-home',

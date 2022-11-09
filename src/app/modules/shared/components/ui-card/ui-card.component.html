@@ -6,6 +6,16 @@
 >
   <ng-template pTemplate="header"> </ng-template>
   <div>
-    <p class="text-justify">{{ description }}</p>
+    <p class="text-center">{{ description }}</p>
   </div>
+  <ng-template pTemplate="footer">
+    <div class="flex justify-content-center">
+      <button pButton pRipple type="button"  icon="pi pi-search" class="p-button-rounded p-button-info"></button>
+    </div>
+    <div class="border-top-1 border-gray-400 my-4">
+      <div class="my-4">
+        <img src="/assets/images/totoro.svg" style="width: 3rem;" alt="totoro" class="filter">
+      </div>
+    </div>
+  </ng-template>
 </p-card>

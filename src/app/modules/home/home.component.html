@@ -1,11 +1,25 @@
-<div>
+<div class="container">
   <div class="block">
-    <p class="text-center md:text-6xl">¡Welcome to Ghiblipedia!</p>
+    <p class="text-center text-white  md:text-6xl">¡Welcome to Ghiblipedia!</p>
   </div>
   <div class="block">
-    <p class="text-lg md:text-2xl text-center">
+    <p class="text-lg md:text-2xl text-white text-center">
       “Just follow your heart and keep smiling”
     </p>
   </div>
 </div>
-<app-ui-data-view [items]="films"></app-ui-data-view>
+
+<div class="flex justify-content-center flex-wrap">
+  <div *ngFor="let item of films" class=" my-2">
+    <div class="text-center px-4">
+      <app-ui-card
+      [header]="item.title"
+      [subheader]="item.original_title"
+      [description]="item.original_title_romanised"
+    ></app-ui-card>
+    </div>
+  </div>
+</div>
+
+<!-- <app-ui-data-view [items]="films"></app-ui-data-view> -->
+<!-- <img src="/assets/images/background.jpg" alt="imagen"> -->

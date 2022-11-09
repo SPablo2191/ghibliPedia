@@ -1,24 +1,13 @@
-<p-dataView #dv [value]="items" [paginator]="true" [rows]="8" filterBy="name"
- layout="list">
-<!-- <ng-template pTemplate="header">
-    <div class="flex flex-column md:flex-row md:justify-content-between">
-        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+{{items$ | async | json}}
+<div class="flex justify-content-center flex-wrap" >
+  <div *ngFor="let item of items$ | async" class="m-2">
+    <div class="text-center px-6">
+      <app-ui-card
+      [header]="item.title"
+      [subheader]="item.original_title"
+      [description]="item.original_title_romanised"
+      [icon]="'/assets/images/totoro.svg'"
+    ></app-ui-card>
     </div>
-</ng-template> -->
-<ng-template let-item pTemplate="listItem" class="list">
-    <div class="px-2">
-        <div>
-            <div class="text-center">
-                <app-ui-card
-                [header]="item.title"
-                [subheader]="item.original_title"
-                [description]="item.original_title_romanised"
-              ></app-ui-card>
-            </div>
-        </div>
-    </div>
-</ng-template>
-<!-- <ng-template let-item pTemplate="gridItem">
-
-</ng-template> -->
-</p-dataView>
+  </div>
+</div>

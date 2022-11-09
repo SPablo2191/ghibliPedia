@@ -15,3 +15,8 @@ export interface Film {
   vehicles: any[];
   url: string;
 }
+
+export interface FilmsState{
+  loading: boolean;
+  items: ReadonlyArray<Film>;
+}

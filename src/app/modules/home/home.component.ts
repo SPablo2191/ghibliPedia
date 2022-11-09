@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from 'src/app/models/Film';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { DataGhibliService } from 'src/app/services/data-ghibli.service';
 import { Store } from '@ngrx/store';
-import { loadedFilms } from 'src/app/state/actions/films.actions';
+import { loadedFilms, loadFilms } from 'src/app/state/actions/films.actions';
+import { selectLoading } from 'src/app/state/selectors/films.selectors';
 
 @Component({
   selector: 'app-home',
@@ -12,11 +13,13 @@ import { loadedFilms } from 'src/app/state/actions/films.actions';
 })
 export class HomeComponent implements OnInit {
   films: Film[] = [];
+  loading$ : Observable <boolean> = new Observable();
   constructor(private dataService: DataGhibliService,
     private store : Store<any>) {}
 
   ngOnInit(): void {
-    this.store.dispatch(loadedFilms({films : this.films}));
+    this.loading$ = this.store.select(selectLoading);
+    this.store.dispatch(loadFilms());
     this.getFilms();
   }
   getFilms() {
@@ -24,7 +27,7 @@ export class HomeComponent implements OnInit {
       .getFilms()
       .pipe(
         map((films: Film[]) => {
-          this.films = films;
+          this.store.dispatch(loadedFilms({films : films})); 
         })
       )
       .subscribe();

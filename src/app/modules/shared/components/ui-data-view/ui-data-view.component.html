@@ -1,0 +1,22 @@
+<p-dataView #dv [value]="items" [paginator]="true" [rows]="9" filterBy="name"
+ layout="list">
+<!-- <ng-template pTemplate="header">
+    <div class="flex flex-column md:flex-row md:justify-content-between">
+        <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </div>
+</ng-template> -->
+<ng-template let-item pTemplate="listItem" class="flex align-items-center p-2">
+    <div class="flex align-items-center px-2 mx-2 my-2">
+        <div class="text-center">
+            <app-ui-card
+            [header]="item.title"
+            [subheader]="item.original_title"
+            [description]="item.description"
+          ></app-ui-card>
+        </div>
+    </div>
+</ng-template>
+<!-- <ng-template let-item pTemplate="gridItem">
+
+</ng-template> -->
+</p-dataView>

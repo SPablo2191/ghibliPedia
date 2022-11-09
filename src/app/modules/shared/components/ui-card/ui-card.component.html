@@ -1,5 +1,11 @@
-<p-card header="{{header}}" subheader="{{subheader}}" [style]="{width: '360px'}" styleClass="p-card-shadow ">
-    <ng-template pTemplate="header">
-    </ng-template>
-    <p class="text-justify">{{description}}</p>
+<p-card
+  header="{{ header }}"
+  subheader="{{ subheader }}"
+  [style]="{ width: '25rem', height: '25rem' }"
+  styleClass="p-card-shadow "
+>
+  <ng-template pTemplate="header"> </ng-template>
+  <div>
+    <p class="text-justify">{{ description }}</p>
+  </div>
 </p-card>

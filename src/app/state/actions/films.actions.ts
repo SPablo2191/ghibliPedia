@@ -6,7 +6,7 @@ export const loadFilms = createAction(
   '[Film List] Load films'
 );
 export const loadedFilms = createAction(
-    '[Film List]  Loaded Success',
+    '[Film List] Loaded Success',
     props<{films : Film []}>()
 );
  

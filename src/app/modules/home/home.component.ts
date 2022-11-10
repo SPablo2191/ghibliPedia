@@ -13,23 +13,11 @@ import { selectLoading } from 'src/app/state/selectors/films.selectors';
 })
 export class HomeComponent implements OnInit {
   films: Film[] = [];
-  loading$ : Observable <boolean> = new Observable();
-  constructor(private dataService: DataGhibliService,
-    private store : Store<any>) {}
+  loading$: Observable<boolean> = new Observable();
+  constructor(private store: Store<any>) {}
 
   ngOnInit(): void {
-    this.loading$ = this.store.select(selectLoading);
+    this.loading$ = this.store.select(selectLoading); 
     this.store.dispatch(loadFilms());
-    this.getFilms();
-  }
-  getFilms() {
-    this.dataService
-      .getFilms()
-      .pipe(
-        map((films: Film[]) => {
-          this.store.dispatch(loadedFilms({films : films})); 
-        })
-      )
-      .subscribe();
   }
 }

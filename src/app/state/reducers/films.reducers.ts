@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { FilmsState } from 'src/app/models/Film';
 import { loadedFilms, loadFilms } from '../actions/films.actions';
 
-export const initialState: FilmsState = { loading: false, items: [] };
+export const initialState: FilmsState = { loading: false, films: [] };
 
 export const filmsReducer = createReducer(
   initialState,
@@ -12,6 +12,7 @@ export const filmsReducer = createReducer(
   }),
   on(loadedFilms, (state,{films}) => { //{films} => solo metrae las pelis del prop
     // aca se deberia cargar la api
-    return { ...state, loading: false , films }; // => generas un nuevo estado ...state
+    console.log(films)
+    return {  loading: false , films }; // => generas un nuevo estado ...state
   })
 );

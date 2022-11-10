@@ -8,8 +8,12 @@
     </p>
   </div>
 </div>
-
-<app-ui-data-view></app-ui-data-view>
+<div *ngIf="loading$ | async" class="flex justify-content-center m-4">
+  <app-ui-spinner></app-ui-spinner>
+</div>
+<div class="flex justify-content-center m-4">
+  <app-ui-data-view></app-ui-data-view>
+</div>
 
 <!-- <div class="flex justify-content-center flex-wrap" *ngIf="loading$">
   <div *ngFor="let item of films" class="m-2">

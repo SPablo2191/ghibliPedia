@@ -1,0 +1,16 @@
+@keyframes p-progress-spinner-color {
+    100%,
+    0% {
+        stroke: #88394c;
+    }
+    40% {
+        stroke: #cf7692;
+    }
+    66% {
+        stroke: #d3b867;
+    }
+    80%,
+    90% {
+        stroke: #b6d168;
+    }
+}

@@ -18,5 +18,5 @@ export interface Film {
 
 export interface FilmsState{
   loading: boolean;
-  items: ReadonlyArray<Film>;
+  films: ReadonlyArray<Film>;
 }

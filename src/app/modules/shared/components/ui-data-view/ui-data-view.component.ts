@@ -19,6 +19,7 @@ export class UiDataViewComponent implements OnInit {
   }
   getFilms() {
     this.items$ = this.store.select(selectListFilms);
+    this.items$.subscribe(console.log)
     
   }
 }

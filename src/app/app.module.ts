@@ -6,6 +6,8 @@ import {  HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ROOT_REDUCERS } from './state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { FilmEffects } from './state/effects/film.effects';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { ROOT_REDUCERS } from './state/app.state';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS),
-    StoreDevtoolsModule.instrument({name:'TEST'})
+    StoreDevtoolsModule.instrument({name:'TEST'}),
+    EffectsModule.forRoot([FilmEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

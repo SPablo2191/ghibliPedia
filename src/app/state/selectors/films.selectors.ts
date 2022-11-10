@@ -6,7 +6,7 @@ export const selectFilmsFeature = (state: AppState) => state.films; // <-- selec
 
 export const selectListFilms = createSelector( //aca añadis los selectors
   selectFilmsFeature,
-  (state: FilmsState) => state.items //con esto solo traemos los items <-- selector hijo
+  (state: FilmsState) => state.films //con esto solo traemos los items <-- selector hijo
 );
 export const selectLoading = createSelector( //aca añadis los selectors
   selectFilmsFeature,
